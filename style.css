@@ -9,6 +9,9 @@
                 float: left;
                 padding: 10px;
             }
+            .band div{
+                padding: 5px;
+            }
             .black{
                 background-color: black;
                 color: white;
