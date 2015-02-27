@@ -50,8 +50,11 @@ var checkBand = function (color) {
         $('#b4').css('background-color', $(event.target).text());
         tolerance = $(event.target).text();                        
       }
-      if (band1val != 0 && band2val != 0){
-        $('#valueout').html('<h1>Resistance is ' + (((band1val * 10)+band2val)*bandmult) + " Ohms.</h1>");
+      if (band1val != 0 || band2val != 0){
+        $('#valueout').html('<h1>Resistance is ' 
+          + (((band1val * 10)+band2val)*bandmult) + " Ohms.</h1>");
+      } else {
+        $('#valueout').html('<h1>Resistance is futile.</h1>');
       }
     });
 });
