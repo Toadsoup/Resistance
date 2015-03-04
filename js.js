@@ -52,7 +52,9 @@ var checkBand = function (color) {
       }
       if (band1val != 0 || band2val != 0){
         $('#valueout').html('<h1>Resistance is ' 
-          + (((band1val * 10)+band2val)*bandmult) + " Ohms.</h1>");
+          + (((band1val * 10)+band2val)*bandmult) + " Ohm" 
+          + ((((band1val * 10)+band2val)*bandmult) > 1 ? "s" : "")
+          + ".</h1>");
       } else {
         $('#valueout').html('<h1>Resistance is futile.</h1>');
       }
