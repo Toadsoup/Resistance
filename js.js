@@ -16,12 +16,31 @@ var checkBand = function (color) {
     return colorCodes[color.toLowerCase()];
   }
 
+var checkTolerance =  function(color) {
+  console.log(color);
+  var toleranceCodes = {
+      'brown' : 1,
+      'red': 2,
+      'yellow' : 5,
+      'green' : .5,
+      'blue' : .25,
+      'violet' : .1,
+      'grey' : .05,
+      'gold' : 5,
+      'silver' : 10,
+      'none' : 20
+    };
+    return toleranceCodes[color.toLowerCase()];
+}
+
+
+
   $(document).ready( function () {
     var resistance = 0;
     var band1 = '';
     var band2 = '';
     var band3 = '';
-    var tolerance = 0;
+    var tolerance = 'none';
     var band1val = 0;
     var band2val = 0;
     var bandmult = 1;
@@ -54,7 +73,11 @@ var checkBand = function (color) {
         $('#valueout').html('<h1>Resistance is ' 
           + (((band1val * 10)+band2val)*bandmult) + " Ohm" 
           + ((((band1val * 10)+band2val)*bandmult) > 1 ? "s" : "")
-          + ".</h1>");
+          + " ±"
+          + checkTolerance(tolerance) 
+          + "%.</h1>"
+          );
+
       } else {
         $('#valueout').html('<h1>Resistance is futile.</h1>');
       }
