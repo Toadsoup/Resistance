@@ -17,7 +17,7 @@ var checkBand = function (color) {
   }
 
 var checkTolerance = function(color) {
-  console.log(color);
+  //console.log(color);
   var toleranceCodes = {
       'brown' : 1,
       'red': 2,
@@ -43,11 +43,16 @@ var checkMultiplier = function (multiplier) {
   }
 }
 
+var setBandColor =function(bandNum, bandColor) {
+  console.log(bandNum + " " + bandColor);
+  var value = 'linear-gradient( to bottom, #fff, ' + bandColor.toLowerCase() + ' 20%, ' + bandColor.toLowerCase() + ' 90% , #000 )'
+  console.log(value);
+  $(bandNum).css('background', value);
+  return this;
+}
+
 $(document).ready( function () {
   var resistance = 0;
-  var band1 = '';
-  var band2 = '';
-  var band3 = '';
   var tolerance = 'none';
   var band1val = 0;
   var band2val = 0;
@@ -56,22 +61,19 @@ $(document).ready( function () {
   $('.band').on('click', function(e){
 
     if($(this).hasClass("band1")){
-      band1 = $(event.target).text();
-      $('#b1').css('background-color', $(event.target).text());
+      setBandColor('#b1', $(event.target).text() );
       band1val = checkBand($(event.target).text());
       
     } else if($(this).hasClass("band2")){
-      $('#b2').css('background-color', $(event.target).text());
-      band2 = $(event.target).text();    
+      setBandColor('#b2', $(event.target).text() );  
       band2val = checkBand($(event.target).text());
       
     } else if($(this).hasClass("band3")){
-      $('#b3').css('background-color', $(event.target).text());
-      band3 = $(event.target).text();     
+      setBandColor('#b3', $(event.target).text() );
       bandmult = checkMultiplier( checkBand($(event.target).text() ) );       
 
     } else if($(this).hasClass("band4")){
-      $('#b4').css('background-color', $(event.target).text());
+      setBandColor('#b4', $(event.target).text() );
       tolerance = $(event.target).text();                        
     }
 

@@ -2,6 +2,21 @@ h1{
     font-size: 1.5em;
     font-family: sans-serif;
     }
+.resistor {
+background: linear-gradient(
+  to bottom,
+  #fff,
+  #fff 45%,
+  #000 55%,
+  #000,
+  #fff 55%,
+  #fff
+);
+/* The rectangle in which to repeat. 
+   It can be fully wide in this case */
+background-size: 100% 100%;
+
+    }
 .band{
     width: 70px;
     float: left;
@@ -56,17 +71,23 @@ h1{
             }
 #render {
     background-color: tan;
-    width: 100%;
+    width: 80%;
     height: 60px;
     border-radius: 25px;
+    margin: 0 auto;
+
+    background: linear-gradient( to bottom, #fff, tan 20%, tan 90%, #000);
+    background-size: 100%;
     }
 
 #b1, #b2, #b3, #b4 {
     height: 100%;
     width: 20px;
-    background-color: black;
+    background: linear-gradient( to bottom, #fff, black 20%, black 90%, #000);
+    background-size: 100%;
     display: inline-block;
     margin: 0 5px;
+    background-size: 100%;
     }
 #b1 {
     margin-left: 35px;
