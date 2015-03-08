@@ -83,9 +83,13 @@ $(document).ready( function () {
         $('#valueout').html('<h1>Resistance is ' 
           + string + " Ohm" 
           + ( resistance > 1 ? "s" : "")
-          + " ±"
+          + "<br /> ±"
+          +  numeral( checkTolerance(tolerance) * resistance / 100).format('00.0 a')
+          + " ("
           + checkTolerance(tolerance) 
-          + "%.</h1>"
+          + "%)</h1>"
+          + "<h2>"
+          
           );
 
       } else {
