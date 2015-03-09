@@ -17,7 +17,6 @@ var checkBand = function (color) {
   }
 
 var checkTolerance = function(color) {
-  //console.log(color);
   var toleranceCodes = {
       'brown' : 1,
       'red': 2,
@@ -44,10 +43,14 @@ var checkMultiplier = function (multiplier) {
 }
 
 var setBandColor =function(bandNum, bandColor) {
-  console.log(bandNum + " " + bandColor);
   var value = 'linear-gradient( to bottom, #fff, ' + bandColor.toLowerCase() + ' 20%, ' + bandColor.toLowerCase() + ' 90% , #000 )'
-  console.log(value);
   $(bandNum).css('background', value);
+//  console.log(bandColor.toLowerCase);
+  if(bandColor.toLowerCase() === 'none'){
+    $(bandNum).css('display', 'none')
+  } else {
+    $(bandNum).css('display', 'inline-block');
+  }
   return this;
 }
 
@@ -83,17 +86,15 @@ $(document).ready( function () {
         $('#valueout').html('<h1>Resistance is ' 
           + string + " Ohm" 
           + ( resistance > 1 ? "s" : "")
-          + "<br /> ±"
+          + "</h1><h2>±"
           +  numeral( checkTolerance(tolerance) * resistance / 100).format('00.0 a')
           + " ("
           + checkTolerance(tolerance) 
-          + "%)</h1>"
-          + "<h2>"
-          
+          + "%)</h2>"
           );
-
       } else {
-        $('#valueout').html('<h1>Resistance is futile.</h1>');
+        $('#valueout').html('<h1>Resistance is futile.</h1>'
+          + "<h2>It is futile to resist.</h2>");
       }
     });
 });

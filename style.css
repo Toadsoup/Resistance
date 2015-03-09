@@ -1,7 +1,16 @@
 h1{
     font-size: 1.5em;
     font-family: sans-serif;
+    color: #333;
     }
+h2 {
+    font-family: sans-serif;
+    color: #666;
+    font-size: 1em;
+}
+html {
+        color: #111;
+}
 .resistor {
 background: linear-gradient(
   to bottom,
@@ -15,7 +24,6 @@ background: linear-gradient(
 /* The rectangle in which to repeat. 
    It can be fully wide in this case */
 background-size: 100% 100%;
-
     }
 .band{
     width: 70px;
@@ -24,6 +32,7 @@ background-size: 100% 100%;
     }
 .band div{
     padding: 5px;
+    text-align: center;
     }
 .black{
     background-color: black;
