@@ -64,20 +64,20 @@ $(document).ready( function () {
   $('.band').on('click', function(e){
 
     if($(this).hasClass("band1")){
-      setBandColor('#b1', $(event.target).text() );
-      band1val = checkBand($(event.target).text());
+      setBandColor('#b1', $(event.target).data("color") );
+      band1val = checkBand($(event.target).data("color"));
       
     } else if($(this).hasClass("band2")){
-      setBandColor('#b2', $(event.target).text() );  
-      band2val = checkBand($(event.target).text());
+      setBandColor('#b2', $(event.target).data("color") );  
+      band2val = checkBand($(event.target).data("color"));
       
     } else if($(this).hasClass("band3")){
-      setBandColor('#b3', $(event.target).text() );
-      bandmult = checkMultiplier( checkBand($(event.target).text() ) );       
+      setBandColor('#b3', $(event.target).data("color") );
+      bandmult = checkMultiplier( checkBand($(event.target).data("color") ) );       
 
     } else if($(this).hasClass("band4")){
-      setBandColor('#b4', $(event.target).text() );
-      tolerance = $(event.target).text();                        
+      setBandColor('#b4', $(event.target).data("color") );
+      tolerance = $(event.target).data("color");                        
     }
 
       if (band1val != 0 || band2val != 0){
