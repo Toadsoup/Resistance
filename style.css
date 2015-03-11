@@ -10,6 +10,7 @@ h2 {
 }
 html {
         color: #111;
+        background: #ddf;
 }
 .resistor {
 background: linear-gradient(
@@ -21,18 +22,56 @@ background: linear-gradient(
   #fff 55%,
   #fff
 );
-/* The rectangle in which to repeat. 
-   It can be fully wide in this case */
 background-size: 100% 100%;
+    }
+
+
+
+    #picker {
+  margin: 0 auto;
+  width: 360px;
+  background: linear-gradient(to bottom, #fff, #fff 135px, #ddd);
+  padding: 1em;
+  border-radius: 1.5em;
+
+}
+#render {
+    background-color: tan;
+    width: 80%;
+    height: 60px;
+    border-radius: 25px;
+    margin: 0 auto;
+    background: linear-gradient( to bottom, #fff, tan 20%, tan 90%, #000);
+    background-size: 100%;
+    }
+
+#b1, #b2, #b3, #b4 {
+    height: 100%;
+    width: 20px;
+    background: linear-gradient( to bottom, #fff, black 20%, black 90%, #000);
+    background-size: 100%;
+    display: inline-block;
+    margin: 0 5px;
+    background-size: 100%;
+    }
+#b1 {
+    margin-left: 35px;
+    }
+#b4 {
+    margin-left: 50px;
+    display: none;
+    }
+#output {
+    clear: both;
     }
 .band{
     width: 70px;
     float: left;
-    padding: 10px;
+    padding: 8px;
+    text-align: center;
     }
 .band div{
     padding: 8px;
-    text-align: center;
     }
 .black{
     background-color: black;
@@ -74,36 +113,3 @@ background-size: 100% 100%;
 .none{
     background-color: #ddd;
             }
-#picker{
-    margin: 0 auto;
-    width: 360px;
-            }
-#render {
-    background-color: tan;
-    width: 80%;
-    height: 60px;
-    border-radius: 25px;
-    margin: 0 auto;
-    background: linear-gradient( to bottom, #fff, tan 20%, tan 90%, #000);
-    background-size: 100%;
-    }
-
-#b1, #b2, #b3, #b4 {
-    height: 100%;
-    width: 20px;
-    background: linear-gradient( to bottom, #fff, black 20%, black 90%, #000);
-    background-size: 100%;
-    display: inline-block;
-    margin: 0 5px;
-    background-size: 100%;
-    }
-#b1 {
-    margin-left: 35px;
-    }
-#b4 {
-    margin-left: 50px;
-    display: none;
-    }
-#output {
-    clear: both;
-    }
