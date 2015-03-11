@@ -3,7 +3,7 @@ Resistance
 
 Small jquery app to determine resistor color band values. Not very exciting at the moment. Was an old project that I decided to start fixing and bringing up to speed.
 
-[View Demo on Heroku]("http://salty-bastion-6591.herokuapp.com")
+[View Demo on Heroku](http://salty-bastion-6591.herokuapp.com)
 
 
 
